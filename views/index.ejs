@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="/main.css">
+
+<style>
+      body {
+    background-color: #f2f2f2;
+}
+h1 {
+    color: blue;
+}
+h3 {
+    color: blue;
+}
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 2px solid black;
+}
+label {
+  float: left; 
+    padding: 0; 
+    width: 1px;
+    margin-left: 10px;
+}
+input {
+  margin-left: 100px;
+  margin-top: 10px;
+
+}
+button {
+  width: auto;
+  margin-left: 10px;
+}
+    </style>
+
+    <title>Home Page</title>
+
+</head>
+<body>
+    <h1>All Users</h1>
+
+    <table >
+            <tr>
+                <th>Object Id</th>
+                <th>Name</th>
+                <th>AGE</th>
+            </tr>
+                <% for (let i = 0; i < users.length; i++) { %>
+                    <tr>
+                        <td><%= users[i]._id %></td>
+                        <td><%= users[i].name %></td>
+                        <td><%= users[i].age %></td>
+                    </tr>
+                <% } %>
+        </table>
+    </br>
+<p>_____________________________________________________________________________________________</p>
+<div  class="editor-label">
+    <h3>Search By Name</h3>
+        
+    <form action="/byname" method="get">
+
+        <label >Name:</label>
+        <input class="my-text-box" type="text" name="name" required>
+  
+        <button type="submit" >Get User By Name</button>
+  
+      </form>
+    </br>
+    
+    <p>_____________________________________________________________________________________________</p>
+
+    <h3>Search By Age</h3>
+
+      <form action="/byage" method="post">
+
+        <label >Age:</label>
+        <input type="number" name="age" required>
+  
+        <button type="submit" >Get User By Age</button>
+  
+      </form>
+    </br>
+
+    <p>_____________________________________________________________________________________________</p>
+
+    <h3>Add User</h3>
+
+    <form action="/addUser" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required></br>
+  
+        <label for="age">Age:</label>
+        <input type="number" name="age">
+  
+        <button type="submit" >Add User</button>
+      </form>
+
+    </br>
+    
+    <p>_____________________________________________________________________________________________</p>
+    
+    <h3>delete User By Id</h3>
+
+    <form action="/deleteuserbyid" method="post">
+        <label for="id">Id:</label>
+        <input type="text" name="_id" required>
+     
+        <button type="submit" >Delete User</button>
+      </form>
+
+    </br>
+
+    <p>_____________________________________________________________________________________________</p>
+
+    <h3>delete All User By Name</h3>
+
+    <form action="/deleteuserbyname" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required>
+        <button type="submit" >Delete User</button>
+
+      </form>
+    </div>
+    </body>
+</html>
