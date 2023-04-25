@@ -87,12 +87,6 @@ app.post('/byage', async (req, res) => {
   }
 });
 
-//____________________________________GET ADDUSER_______________________________________
-
-app.get('/addUser', (req, res) => {
-  res.sendFile(__dirname + '/html/addUser.html');
-});
-
 
 //____________________________________POST ADDUSER_______________________________________
 
