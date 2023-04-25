@@ -13,10 +13,7 @@ app.set('view engine', 'ejs');
 
 const port = process.env.PORT;
 //_____________________________________PARSE BODY_______________________________________
-const bodyParser = require('body-parser');
-
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.json());
 
 //_____________________________________MODEL_______________________________________
 const user = require('./model/User');
